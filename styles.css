@@ -1,7 +1,10 @@
 * {
   padding: 0;
   margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  font-size: 16px;
 }
 
 body {
@@ -9,22 +12,65 @@ body {
   width: 100vw;
 
   .page {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-
-    nav {
-      ul {
-        font-weight: 800;
-      }
+    .page-top {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 1rem;
     }
-    .section.first {
-      padding-bottom: 0.8rem;
+    #menu {
+      display: none;
+      position: absolute;
+      margin: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: white;
+      height: 100%;
+      width: 80vw;
+      z-index: 1;
+      font-weight: 800;
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+      transition: width 0.2s linear;
+      padding: 15px;
 
       img {
+        padding-top: 0.8rem;
+        padding-left: 14.8rem;
+        padding-bottom: 8rem;
+        display: block;
+        height: auto;
+      }
+
+      ul {
+        list-style-type: none;
+        li {
+          span {
+            a {
+              position: relative;
+              display: table;
+              width: 300px;
+              padding: 0.6rem;
+              color: hsl(236, 13%, 42%);
+            }
+          }
+        }
+      }
+    }
+    #menu.show {
+      display: block;
+    }
+
+    .section.first {
+      padding-bottom: 0.8rem;
+      img {
+        content: url("assets/images/image-web-3-mobile.jpg");
+        width: 80vw;
         height: 30vh;
-        width: 90vw;
-        padding-bottom: 0.4rem;
       }
 
       h1 {
@@ -52,8 +98,8 @@ body {
     .section.second {
       padding-bottom: 1rem;
       .card {
-        width: 82vw;
-        height: 60vh;
+        width: 90%;
+        height: 100%;
         padding: 1rem;
         background-color: hsl(240, 100%, 5%);
         .card-title {
@@ -116,6 +162,94 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    max-height: 100vh;
+    max-width: 100vw;
+    padding: 1.4rem;
+    .page {
+      max-height: 100%; /* Adjust page height for bigger screens */
+      max-width: 100%; /* Adjust page width for bigger screens */
+      padding: 2rem; /* Adjust padding for bigger screens */
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .page-top {
+        display: flex;
+        margin-right: 100vw;
+        justify-content: space-between;
+      }
+    }
+
+    #menu {
+      max-width: 25vw; /* Adjust menu width for bigger screens */
+    }
+    .section.first {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 70%;
+      padding: 0;
+      margin: 0;
+      order: 1;
+      flex-grow: 1;
+      .content {
+        order: 3;
+      }
+    }
+    .section.first img {
+      content: url("assets/images/image-web-3-desktop.jpg");
+      max-width: 70%;
+      margin-top: 4rem;
+      margin-right: 4rem;
+      order: 1;
+    }
+    .section.first h1 {
+      order: 2;
+    }
+
+    .section.first button {
+      order: 4;
+    }
+    .section.second {
+      display: flex;
+      order: 2;
+      flex-grow: 1;
+      max-width: 30%;
+      padding-top: 2rem;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .section.first button {
+      max-width: 30%; /* Adjust button width for bigger screens */
+    }
+
+    .section.second .card {
+      max-width: 100%;
+      max-height: 90%;
+      margin-top: 1rem;
+
+      h2 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 20px;
+      }
+      /* Adjust card width for bigger screens */
+    }
+
+    .section.third {
+      display: flex;
+      order: 3;
+      flex-grow: 1;
+      flex-direction: row;
+    }
+
+    .section.third .image-container {
     }
   }
 }
