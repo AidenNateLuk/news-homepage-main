@@ -6,176 +6,306 @@
   font-size: 16px;
   list-style: none;
 }
+/* Base styles */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  list-style: none;
+}
+
 body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  overflow-y: auto;
+}
 
-  .blurry.shown {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.645); /* Black with 20% opacity */
-    filter: blur(10px);
-    z-index: 0;
+/* Blurry overlay */
+.blurry.shown {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.645); /* Black with 20% opacity */
+  filter: blur(1.5rem);
+  z-index: 5;
+}
+
+/* Page container */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 90%;
+  position: relative;
+  margin: 1.24rem;
+}
+
+/* Page header */
+.page-head {
+  padding-bottom: 1rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav img {
+  height: 2.4rem;
+}
+
+#open {
+  cursor: pointer;
+  height: 1.24rem;
+}
+
+/* List */
+.list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background: white;
+  width: 200px;
+  transform: translateX(300px);
+  transition: ease-out 0.3s;
+  z-index: 10;
+}
+
+.list ul {
+  color: hsl(236, 13%, 42%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 4.8rem;
+  padding-left: 2.4rem;
+}
+
+.list li {
+  cursor: pointer;
+}
+
+.list li:active {
+  color: hsl(5, 85%, 63%);
+}
+
+.list img {
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+}
+
+.list.shown {
+  transform: translateX(25px);
+  transition: ease-in 0.3s;
+  z-index: 10;
+}
+
+/* Main content */
+.top {
+  padding-bottom: 1.24rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding-bottom: 1.24rem;
+}
+
+.main img {
+  content: url("assets/images/image-web-3-mobile.jpg");
+  object-fit: contain;
+  width: 100%;
+}
+
+.main .content h1 {
+  font-weight: 800;
+  font-size: 2.48rem;
+  line-height: 2.48rem;
+}
+
+.main .content .paragraph p {
+  line-height: 1.4rem;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.main .content .paragraph button {
+  padding: 1rem 1.4rem;
+  background-color: hsl(5, 85%, 63%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+
+.main .content .paragraph button:active {
+  background-color: hsl(240, 100%, 5%);
+}
+
+/* New articles */
+.new-articles .card {
+  background-color: hsl(240, 100%, 5%);
+  color: white;
+  padding: 1rem;
+}
+
+.new-articles .card .card-title h1 {
+  color: hsl(35, 77%, 62%);
+  font-size: 2.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.new-articles .card section {
+  border-bottom: rgba(255, 255, 255, 0.5) solid 0.5px;
+  padding-bottom: 1.24rem;
+  padding-top: 1.24rem;
+}
+
+.new-articles .card section a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.new-articles .card section a:active {
+  color: hsl(35, 77%, 62%);
+}
+
+.new-articles .card section p {
+  padding-top: 1rem;
+  color: hsl(233, 8%, 79%);
+  line-height: 1.4rem;
+}
+
+.new-articles .card section:last-child {
+  border-bottom: none;
+}
+
+/* Other articles */
+.other-articles .image-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+
+.other-articles .image-container img {
+  height: 15vh;
+}
+
+.other-articles .image-container h1 {
+  color: hsl(233, 8%, 79%);
+  font-size: 2.4rem;
+}
+
+.other-articles .image-container a {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.other-articles .image-container a:active {
+  color: hsl(5, 85%, 63%);
+}
+
+.other-articles .image-container p {
+  font-weight: 400;
+  color: hsl(236, 13%, 42%);
+}
+@media only screen and (min-width: 768px) {
+  body {
+    overflow: hidden;
+    margin: 0;
   }
+
   .page {
-    margin-top: 1rem;
-    height: 80vh;
-    width: 90vw;
-    position: relative;
-    padding: 1rem;
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-      img {
-        height: 2.4rem;
-      }
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
-      #open {
-        cursor: pointer;
-        height: 1.24rem;
+    .page-head {
+      padding: 0;
+      nav {
+        img {
+          position: fixed;
+        }
+        #open {
+          display: none;
+        }
       }
     }
+
     .list {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      background: white;
-      width: 200px;
-      transform: translateX(200px);
-      transition: ease-out 0.3s;
-      z-index: 10;
+      background: transparent; /* Hide the list initially */
+      position: fixed;
       ul {
-        color: hsl(236, 13%, 42%);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding-top: 4.8rem;
-        padding-left: 2.4rem;
-      }
-      li {
-        cursor: pointer;
-      }
-      li:active {
-        color: hsl(5, 85%, 63%);
-      }
-      img {
-        position: absolute;
-        right: 1.2rem;
-        top: 1.2rem;
-      }
-    }
-
-    .list.shown {
-      transform: translateX(0px);
-      transition: ease-in 0.3s;
-      z-index: 10;
-    }
-    .main {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      img {
-        height: 40vh;
-        width: 100%;
-      }
-      .content {
-        h1 {
-          font-weight: 800;
-          font-size: 2rem;
-        }
-        .paragraph {
-          p {
-            font-weight: 400;
-            font-size: 1rem;
-            margin-bottom: 2rem;
-          }
-          button {
-            height: 2.4rem;
-            width: 50vw;
-            background-color: hsl(5, 85%, 63%);
-            border: none;
-            color: white;
-            font-weight: 600;
-            letter-spacing: 0.2rem;
-            cursor: pointer;
-          }
-          button:active {
-            background-color: hsl(240, 100%, 5%);
-          }
-        }
-      }
-    }
-    .new-articles {
-      padding-top: 2.4rem;
-      padding-bottom: 2.8rem;
-      height: 60vh;
-      .card {
-        height: 100%;
-        background-color: hsl(240, 100%, 5%);
-        color: white;
-        padding: 1rem;
-        .card-title {
-          color: hsl(35, 77%, 62%);
-          padding-bottom: 1rem;
-          h1 {
-            font-size: 2.4rem;
-          }
-        }
-        section {
-          border-bottom: white solid 1px;
-          margin-bottom: 4rem;
-
-          a {
-            padding-top: 2rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-            padding-bottom: 1rem;
-            cursor: pointer;
-          }
-          a:active {
-            color: hsl(35, 77%, 62%);
-          }
-          p {
-            color: hsl(233, 8%, 79%);
-            padding: 1rem;
-          }
-        }
-      }
-      section:last-child {
-        border-bottom: none;
-      }
-    }
-    .other-articles {
-      height: 60vh;
-      padding-top: 2.4rem;
-      .image-container {
         display: flex;
         flex-direction: row;
-        padding-bottom: 1rem;
-        gap: 1rem;
+      }
+    }
 
-        h1 {
-          color: hsl(233, 8%, 79%);
-          font-size: 2.4rem;
+    .top {
+      flex-grow: 3;
+      height: 50%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-top: 2rem;
+      margin-bottom: 4rem;
+
+      .main {
+        width: 80%;
+        padding: 0;
+
+        img {
+          content: url("assets/images/image-web-3-desktop.jpg");
+          object-fit: contain;
+          width: 100%;
+          max-width: 100%; /* Ensure image doesn't exceed container width */
+          height: auto; /* Maintain aspect ratio */
+          max-height: 350px; /* Adjust the maximum height as needed */
         }
-        a {
-          color: black;
-          font-size: 1.2rem;
-          font-weight: 600;
-          cursor: pointer;
-        }
-        a:active {
-          color: hsl(5, 85%, 63%);
-        }
-        p {
-          font-weight: 400;
-          color: hsl(236, 13%, 42%);
+
+        .content {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start; /* Align content to the start of the container */
+
+          h1 {
+            font-size: 65px;
+            line-height: 1;
+          }
+
+          .paragraph {
+            margin-top: 1rem; /* Add margin between heading and paragraph */
+            width: 100%;
+          }
         }
       }
+
+      .new-articles {
+        margin-left: 2.48rem;
+      }
+    }
+
+    .other-articles {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+      margin-top: 1rem;
     }
   }
 }
