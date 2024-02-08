@@ -154,25 +154,29 @@ nav img {
 .new-articles .card {
   background-color: hsl(240, 100%, 5%);
   color: white;
-  padding: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 0;
 }
 
 .new-articles .card .card-title h1 {
   color: hsl(35, 77%, 62%);
-  font-size: 2.4rem;
-  padding-bottom: 0.4rem;
+  font-size: 3.6rem;
+  padding: 1rem;
+  font-weight: 600;
+  padding-right: 0;
 }
 
 .new-articles .card section {
   border-bottom: rgba(255, 255, 255, 0.5) solid 0.5px;
-  padding-bottom: 1.24rem;
-  padding-top: 1.24rem;
+  padding: 1.24rem;
+  padding-right: 0;
 }
 
 .new-articles .card section a {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   cursor: pointer;
+  padding-right: 0;
 }
 
 .new-articles .card section a:active {
@@ -183,6 +187,7 @@ nav img {
   padding-top: 1rem;
   color: hsl(233, 8%, 79%);
   line-height: 1.4rem;
+  font-size: 0.8rem;
 }
 
 .new-articles .card section:last-child {
@@ -233,13 +238,12 @@ nav img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-right: 4rem;
 
     .page-head {
-      padding: 0;
+      padding-top: 1rem;
+      padding-left: 4rem;
       nav {
-        img {
-          position: fixed;
-        }
         #open {
           display: none;
         }
@@ -247,14 +251,15 @@ nav img {
     }
 
     .list {
+      display: flex;
       background: transparent; /* Hide the list initially */
       position: fixed;
-      ul {
-        display: flex;
-        flex-direction: row;
-      }
     }
-
+    .list ul {
+      display: flex;
+      flex-direction: row;
+      transform: translateX(-550px);
+    }
     .top {
       flex-grow: 3;
       height: 50%;
@@ -268,6 +273,7 @@ nav img {
       .main {
         width: 80%;
         padding: 0;
+        padding-left: 4rem;
 
         img {
           content: url("assets/images/image-web-3-desktop.jpg");
@@ -298,6 +304,7 @@ nav img {
 
       .new-articles {
         margin-left: 2.48rem;
+        padding-right: 4rem;
       }
     }
 
@@ -306,6 +313,7 @@ nav img {
       flex-direction: row;
       flex-grow: 1;
       margin-top: 1rem;
+      padding-left: 4rem;
     }
   }
 }
