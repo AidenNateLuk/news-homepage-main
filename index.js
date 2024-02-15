@@ -1,18 +1,23 @@
-const hamburgerMenu = document.querySelector(".hamburger-icon");
-const navbar = document.querySelector(".navbar");
-const navbarList = document.querySelector(".navbar-list");
-const overlay = document.querySelector("#page-overlay");
+const menuButton = document.querySelector(".menu");
+const containerNav = document.querySelector(".container_nav");
+const closeNav = document.querySelector(".close");
+const overlay = document.querySelector(".overlay");
 
-hamburgerMenu.addEventListener("click", () => {
-  if (navbar.classList.contains("navbar-mobile-open") == true) {
-    hamburgerMenu.setAttribute("src", "assets/images/icon-menu.svg");
-    navbar.classList.remove("navbar-mobile-open");
-    navbarList.classList.remove("list-open");
-    overlay.classList.remove("overlay");
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 700) {
+    containerNav.style.display = "block";
   } else {
-    hamburgerMenu.setAttribute("src", "assets/images/icon-menu-close.svg");
-    navbar.classList.add("navbar-mobile-open");
-    navbarList.classList.add("list-open");
-    overlay.classList.add("overlay");
+    containerNav.style.display = "none";
+    overlay.style.display = "none";
   }
+});
+
+menuButton.addEventListener("click", () => {
+  containerNav.style.display = "block";
+  overlay.style.display = "block";
+});
+
+closeNav.addEventListener("click", () => {
+  containerNav.style.display = "none";
+  overlay.style.display = "none";
 });

@@ -1,116 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>news-homepage-main</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class = "header">
-    <div class = "header-container">
-      <img src = "assets/images/logo.svg" alt = "Site Logo" class = "logo">
-      <nav class = "navbar">
-        <ul class = "navbar-list">
-          <li>Home</li>
-          <li>New</li>
-          <li>Popular</li>
-          <li>Trending</li>
-          <li>Categories</li>
-        </ul>
-      </nav>
-      <img src = "assets/images/icon-menu.svg" class = "hamburger-icon">
-    </div>
-  </header>
-  <main class = "main">
-    <div class = "hero">
-      <picture>
-        <source class = "hero-img-desktop" media="(min-width: 1088px)" srcset="assets/images/image-web-3-desktop.jpg"></source>
-        <img src = "assets/images/image-web-3-mobile.jpg" alt = "Hero Img Mobile" class = "hero-img-mobile">
-      </picture>
-      <h1>The Bright Future of Web 3.0?</h1>
-      <div class = "hero-content">
-        <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
-        </p>
-        <a href = "#" class = "hero-CTA">
-          READ MORE
-        </a>
-      </div>
-    </div>
-    <div class = "primary-blog">
-      <h2>New</h2>
-      <article class = "primary-blog-article">
-        <h3>
-          Hydrogen VS Electric Cars
-        </h3>
-        <p class = "primary-blog-p">
-          Will hydrogen-fueled cars ever catch up to EVs?
-        </p>
-      </article>
-      <article class = "primary-blog-article">
-        <h3>
-          The Downsides of AI Artistry
-        </h3>
-        <p class = "primary-blog-p">
-          What are the possible adverse effects of on-demand AI image generation?
-        </p>
-      </article>
-      <article class = "primary-blog-article">
-        <h3>
-          Is VC Funding Drying Up?
-        </h3>
-        <p class = "primary-blog-p">
-          Private funding by VC firms is down 50% YOY. We take a look at what that means.
-        </p>
-      </article>
-    </div>
-    <div class = "secondary-blog">
-      <article class = "secondary-blog-article">
-        <img src = "assets/images/image-retro-pcs.jpg">
-        <div class = "secondary-blog-article-content">
-          <span>
-            01
-          </span>
-          <h3>
-            Reviving Retro PCs
-          </h3>
-          <p>
-            What happens when old PCs are given modern upgrades?
-          </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container_main">
+      <header>
+        <div class="overlay"></div>
+
+        <div class="container_logo">
+          <img src="assets/images/logo.svg" alt="logo" class="logo" />
         </div>
-      </article>
-      <article class = "secondary-blog-article">
-        <img src = "assets/images/image-top-laptops.jpg">
-        <div class = "secondary-blog-article-content">
-          <span>
-            02
-          </span>
-          <h3>
-            Top 10 Laptops of 2022
-          </h3>
-          <p>
-            Our best picks for various needs and budgets.
-          </p>
+        <div class="container_nav">
+          <div class="icon_close">
+            <img
+              src="assets/images/icon-menu-close.svg"
+              alt="close_icon"
+              class="close"
+            />
+          </div>
+          <div class="navs">
+            <nav aria-label="Home">Home</nav>
+            <nav aria-label="New">New</nav>
+            <nav aria-label="Popular">Popular</nav>
+            <nav aria-label="Trending">Trending</nav>
+            <nav aria-label="Categories" class="last_nav">Categories</nav>
+          </div>
         </div>
-      </article>
-      <article class = "secondary-blog-article">
-        <img src = "assets/images/image-gaming-growth.jpg">
-        <div class = "secondary-blog-article-content">
-          <span>
-            03
-          </span>
-          <h3>
-            The Growth of Gaming
-          </h3>
-          <p>
-            How the pandemic has sparked fresh opportunities.
-          </p>
+
+        <div class="container_menu">
+          <img src="assets/images/icon-menu.svg" alt="icon_menu" class="menu" />
         </div>
-      </article>
-    </div>
-  </main>
-  <div id = "page-overlay"></div>
-  <script src = "index.js"></script>
-</body>
+      </header>
+      <main>
+        <div class="container_head">
+          <picture>
+            <source
+              media="(max-width: 700px )"
+              srcset="assets\images\image-web-3-mobile.jpg"
+              class="img_head"
+            />
+            <img
+              src="assets\images\image-web-3-desktop.jpg"
+              alt="image_web"
+              class="img_head"
+              ;
+            />
+          </picture>
+        </div>
+        <div class="container_title">
+          <h1 class="title">The Bright Future of Web 3.0?</h1>
+        </div>
+        <div class="container_paragraph">
+          <p class="paragraph">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+
+          <button class="button">Read more</button>
+        </div>
+        <div class="container_aside">
+          <h2 class="title_aside">New</h2>
+
+          <h3 class="subtitle_aside">Hydrogen VS Electric Cars</h3>
+          <span class="span_aside"
+            >Will hydrogen-fueled cars ever catch up to EVs?</span
+          >
+          <hr />
+          <h3 class="subtitle_aside">The Downsides of AI Artistry</h3>
+          <span class="span_aside"
+            >What are the possible adverse effects of on-demand AI image
+            generation?</span
+          >
+          <hr />
+          <h3 class="subtitle_aside">Is VC Funding Drying Up?</h3>
+          <span class="span_aside"
+            >Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </span>
+        </div>
+        <div class="container_pcs">
+          <div class="container_img_footer">
+            <img
+              src="assets/images/image-retro-pcs.jpg"
+              alt="retro_pcs_img"
+              class="img_footer"
+            />
+          </div>
+          <div class="subcontainer_footer">
+            <h3 class="head_footer">01</h3>
+            <h4 class="subtitle_footer">Reviving Retro PCs</h4>
+            <span class="span_footer"
+              >What happens when old PCs are given modern upgrades?</span
+            >
+          </div>
+        </div>
+        <div class="container_laptops">
+          <div class="container_img_footer">
+            <img
+              src="assets/images/image-top-laptops.jpg"
+              class="img_footer"
+              alt="img_laptops"
+            />
+          </div>
+          <div class="subcontainer_footer">
+            <h3 class="head_footer">02</h3>
+            <h4 class="subtitle_footer">Top 10 Laptops of 2022</h4>
+            <span class="span_footer"
+              >Our best picks for various needs and budgets.</span
+            >
+          </div>
+        </div>
+        <div class="container_gaming">
+          <div class="container_img_footer">
+            <img
+              src="assets/images/image-gaming-growth.jpg"
+              alt="img_gaming"
+              class="img_footer"
+            />
+          </div>
+          <div class="subcontainer_footer">
+            <h3 class="head_footer">03</h3>
+            <h4 class="subtitle_footer">The Growth of Gaming</h4>
+            <span class="span_footer"
+              >How the pandemic has sparked fresh opportunities.</span
+            >
+          </div>
+        </div>
+      </main>
+      <div class="overlay"></div>
+    </section>
+    <script src="index.js"></script>
+  </body>
 </html>
